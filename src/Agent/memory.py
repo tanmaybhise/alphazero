@@ -22,10 +22,11 @@ class Memory():
         else:
             self.episode=1
 
-    def update_agenty_memory(self, game_state, agent, move):
+    def update_agenty_memory(self, game_state, agent, move, agent_kind):
         inx = self.agent_memory.shape[0]
         self.agent_memory.loc[inx, "game_state"] = str(game_state)
         self.agent_memory.loc[inx, "agent"] = int(agent)
+        self.agent_memory.loc[inx, "agent_kind"] = agent_kind
         self.agent_memory.loc[inx, "move"] = str(move)
         self.agent_memory.loc[inx, "episode"] = self.episode
     
